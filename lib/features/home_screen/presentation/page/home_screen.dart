@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:edf3/utils/theme.dart';
-import '../features/cards/presentation/widgets/card_widget.dart'; // Import your CreditCard widget
+import '../../../cards/presentation/widgets/card_widget.dart'; // Import your CreditCard widget
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

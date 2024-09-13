@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:edf3/features/authentication/data/datasources/auth_remote_data_source.dart';
 import 'package:edf3/features/authentication/domain/entities/user_entity.dart';
 import 'package:edf3/features/authentication/domain/repositories/auth_repo.dart';
-import 'package:edf3/utils/usecase.dart';
+import 'package:edf3/utils/type_def/types_def.dart';
 
 class AuthRepoImpl implements AuthRepo {
   final AuthRemoteDataSource dataSource;
@@ -15,15 +15,18 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  ResultFuture<void> signUp({
+  ResultFuture<UserEntity> signUp({
     required String email,
     required String userName,
+    required String civilID,
   }) async {
     return Right(
-      await dataSource.signUp(
+      (await dataSource.signUp(
         email: email,
         userName: userName,
-      ),
+        civilID: civilID,
+      ))
+          .toEntity(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:edf3/features/authentication/domain/entities/user_entity.dart';
 import 'package:edf3/features/authentication/domain/repositories/auth_repo.dart';
+import 'package:edf3/utils/type_def/types_def.dart';
 import 'package:edf3/utils/usecase.dart';
 
 class SignInUseCase
@@ -13,7 +14,7 @@ class SignInUseCase
       await repo.signIn(email: useCaseParams.email);
 }
 
-sealed class SignInUseCaseParams {
+class SignInUseCaseParams {
   final String email;
 
   SignInUseCaseParams({required this.email});

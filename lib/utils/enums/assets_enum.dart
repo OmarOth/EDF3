@@ -1,11 +1,11 @@
-enum AppIcons with AppIconsName {
+enum AppIconsEnum with AppIconsName {
   card("card"),
   home("home"),
   history("history"),
   qr("qr"),
   profile("profile");
 
-  const AppIcons(this.name);
+  const AppIconsEnum(this.name);
 
   @override
   final String name;

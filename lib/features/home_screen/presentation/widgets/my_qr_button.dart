@@ -1,4 +1,4 @@
-import 'package:edf3/utils/assets.dart';
+import 'package:edf3/utils/enums/assets_enum.dart';
 import 'package:edf3/utils/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +43,7 @@ class QrCodeButton extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Image.asset(
-                  AppIcons.qr.getPath(),
+                  AppIconsEnum.qr.getPath(),
                 ),
               ),
             ),

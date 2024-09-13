@@ -1,27 +1,27 @@
 import 'package:edf3/features/cards/presentation/widgets/card_widget.dart';
-import 'package:edf3/utils/assets.dart';
+import 'package:edf3/utils/enums/assets_enum.dart';
 import 'package:edf3/utils/history_screen.dart';
-import 'package:edf3/utils/home_screen.dart';
+import 'package:edf3/features/home_screen/presentation/page/home_screen.dart';
 import 'package:flutter/material.dart';
 
-Map<int, (String, AppIcons)> screensNames = {
+Map<int, (String, AppIconsEnum)> screensNames = {
   0: (
     "Home",
-    AppIcons.home,
+    AppIconsEnum.home,
   ),
   1: (
     "History",
-    AppIcons.history,
+    AppIconsEnum.history,
   ),
   2: (
     "Payment",
-    AppIcons.qr,
+    AppIconsEnum.qr,
   ),
   3: (
     "Cards",
-    AppIcons.card,
+    AppIconsEnum.card,
   ),
-  4: ("Profile", AppIcons.profile)
+  4: ("Profile", AppIconsEnum.profile)
 };
 
 const List<Widget> screens = [

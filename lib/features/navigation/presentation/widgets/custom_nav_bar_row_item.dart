@@ -1,9 +1,9 @@
-import 'package:edf3/utils/assets.dart';
+import 'package:edf3/utils/enums/assets_enum.dart';
 import 'package:edf3/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavBarRowItem extends StatelessWidget {
-  final AppIcons icon;
+  final AppIconsEnum icon;
   final String text;
   final bool isHightLighted;
   final ValueChanged onTap;
@@ -57,7 +57,7 @@ class CustomNavBarRowItem extends StatelessWidget {
                       ],
                     ),
                   ] +
-                  (icon != AppIcons.qr
+                  (icon != AppIconsEnum.qr
                       ? [
                           image,
                           Text(text),

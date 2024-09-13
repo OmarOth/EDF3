@@ -1,10 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:edf3/features/authentication/data/models/user_model.dart';
+import 'package:edf3/utils/enums/user_enum.dart';
 import 'package:flutter/material.dart';
 
 abstract class AuthRemoteDataSource {
   Future<UserModel> signIn({required String email});
-  Future<void> signUp({required String email, required String userName});
+  Future<UserModel> signUp({
+    required String email,
+    required String userName,
+    required String civilID,
+  });
 }
 
 class AuthRemoteDataSourceIMPL implements AuthRemoteDataSource {
@@ -17,11 +22,28 @@ class AuthRemoteDataSourceIMPL implements AuthRemoteDataSource {
       userName: "Omar",
       email: email,
       userID: "996999",
+      userType: UserTypeEnum.authenticated,
+      civilID: '6999005',
     );
   }
 
   @override
-  Future<void> signUp({required String email, required String userName}) async {
+  Future<UserModel> signUp({
+    required String email,
+    required String userName,
+    required String civilID,
+  }) async {
+    /**
+     * call back end, ensure sign up worked correctly, return new user data
+     */
     debugPrint("Signed up!");
+
+    return UserModel(
+      userName: userName,
+      email: email,
+      userID: '889911',
+      userType: UserTypeEnum.authenticated,
+      civilID: civilID,
+    );
   }
 }
